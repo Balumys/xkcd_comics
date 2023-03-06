@@ -1,8 +1,10 @@
 import os
 import sys
+import random
+
 import requests
 from dotenv import load_dotenv
-import random
+
 from comics import get_last_comic_number, fetch_random_comics, Comic
 from vk import upload_comic_to_vk_server, save_img_to_wall, post_img_to_wall, \
     ResponseFromServer, SavedComicToWall
@@ -28,4 +30,3 @@ if __name__ == "__main__":
         sys.exit(err)
     finally:
         os.remove(random_comic.get_comic_path())
-

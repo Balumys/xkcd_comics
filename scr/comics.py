@@ -1,7 +1,8 @@
-import requests
 import os
-from pydantic import BaseModel, HttpUrl, Field
 from urllib import parse
+
+import requests
+from pydantic import BaseModel, HttpUrl, Field
 
 
 class Comic(BaseModel):
