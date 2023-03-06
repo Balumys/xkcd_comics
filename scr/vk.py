@@ -47,10 +47,10 @@ def save_img_to_wall(token, server_response):
                   "photo": server_response.photo,
                   }
     response = requests.post(url, params=parameters)
-    response_json = response.json()
-    if "error" in response_json:
+    saved_comic = response.json()
+    if "error" in saved_comic:
         raise requests.exceptions.RequestException(response.json()["error"]["error_msg"])
-    return response_json["response"][0]
+    return saved_comic["response"][0]
 
 
 def post_img_to_wall(token, img_title, attachment):
@@ -62,6 +62,6 @@ def post_img_to_wall(token, img_title, attachment):
                   "message": img_title,
                   "attachments": attachment}
     response = requests.post(url, params=parameters)
-    response_json = response.json()
-    if "error" in response_json:
+    posted_comic = response.json()
+    if "error" in posted_comic:
         raise requests.exceptions.RequestException(response.json()["error"]["error_msg"])
