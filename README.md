@@ -21,7 +21,7 @@ pip install -r requirements.txt
 Place API token in **.env** file and specify the programming languages you want to get information from.
 
 ```
-VK_TOKEN==YourToken
+VK_TOKEN=YourToken
 ```
 
 ## Usage
