@@ -22,6 +22,8 @@ if __name__ == "__main__":
         server_response = ResponseFromServer(**upload_comic_to_vk_server(token, random_comic.get_comic_path()))
         saved_comic_to_wall = SavedComicToWall(**save_img_to_wall(token, server_response))
         post_img_to_wall(token, random_comic.title, saved_comic_to_wall.get_media_attachment())
+    except requests.exceptions.HTTPError as err:
+        sys.exit(err)
     except requests.exceptions.RequestException as err:
         sys.exit(err)
     finally:
