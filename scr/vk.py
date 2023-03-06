@@ -32,8 +32,8 @@ def upload_comic_to_vk_server(token, img_path):
         url = get_img_upload_url(token)
         files = {"photo": file}
         response = requests.post(url, files=files)
-        if response.json()["photo"] == "[]":
-            raise requests.exceptions.RequestException("Photo wasn't upload, check photo parameters")
+    if response.json()["photo"] == "[]":
+        raise requests.exceptions.RequestException("Photo wasn't upload, check photo parameters")
     return response.json()
 
 
